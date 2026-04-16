@@ -30,6 +30,20 @@
   --sidebar-icon: #498291;
   --export-button-opacity: 0.5;
 
+  /* Desktop shell (Figma corporation directory) */
+  --shell-sidebar-width: 280px;
+  --shell-header-height: 60px;
+  --shell-main-padding-x: 24px;
+  --shell-main-padding-y: 24px;
+  --sidebar-active-bg: #305fa1;
+  --sidebar-active-foreground: #ffffff;
+  --status-success: #61a47a;
+  --status-success-foreground: #ffffff;
+  --status-warning: #e8b84d;
+  --status-warning-foreground: #2f414a;
+  --status-incomplete: #7c6bb5;
+  --status-incomplete-foreground: #ffffff;
+
   --font-sans: system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
   color-scheme: only light;
 }
@@ -57,6 +71,16 @@
   --color-brand-teal: var(--brand-teal);
   --color-brand-muted-text: var(--brand-muted-text);
   --color-brand-icon-teal: var(--brand-icon-teal);
+  --color-sidebar-active-bg: var(--sidebar-active-bg);
+  --color-sidebar-active-foreground: var(--sidebar-active-foreground);
+  --color-status-success: var(--status-success);
+  --color-status-success-foreground: var(--status-success-foreground);
+  --color-status-warning: var(--status-warning);
+  --color-status-warning-foreground: var(--status-warning-foreground);
+  --color-status-incomplete: var(--status-incomplete);
+  --color-status-incomplete-foreground: var(--status-incomplete-foreground);
+  --width-sidebar: var(--shell-sidebar-width);
+  --height-header: var(--shell-header-height);
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);

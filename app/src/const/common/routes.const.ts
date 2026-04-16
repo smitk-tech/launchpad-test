@@ -3,4 +3,7 @@ export const ROUTES = {
   dashboard: {
     root: '/dashboard',
   },
+  corporations: {
+    directory: '/corporations',
+  },
 } as const
