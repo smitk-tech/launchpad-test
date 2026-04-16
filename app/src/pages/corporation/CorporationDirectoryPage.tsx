@@ -1,5 +1,6 @@
 import logoMark from '@/assets/Logo Wrapper.svg'
 import addIcon from '@/assets/Left icon wrapper.svg'
+import { CorporationRowActionsMenu } from '@/components/corporation/CorporationRowActionsMenu'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import {
@@ -25,12 +26,10 @@ import {
   LayoutDashboard,
   Mail,
   MoreHorizontal,
-  Pencil,
   Search,
   Settings,
   Shield,
   Ticket,
-  Trash2,
   Users,
 } from 'lucide-react'
 
@@ -327,34 +326,8 @@ export function CorporationDirectoryPage() {
                         {row.periodLabel}
                       </td>
                       <td className="px-4 py-3">
-                        <div className="flex items-center justify-end gap-1">
-                          <Button
-                            type="button"
-                            variant="ghost"
-                            size="icon"
-                            className="size-8 text-[color:var(--brand-icon-teal)]"
-                            aria-label={`Edit ${row.name}`}
-                          >
-                            <Pencil className="size-4" strokeWidth={1.75} />
-                          </Button>
-                          <Button
-                            type="button"
-                            variant="ghost"
-                            size="icon"
-                            className="size-8 text-destructive"
-                            aria-label={`Delete ${row.name}`}
-                          >
-                            <Trash2 className="size-4" strokeWidth={1.75} />
-                          </Button>
-                          <Button
-                            type="button"
-                            variant="ghost"
-                            size="icon"
-                            className="size-8 text-[color:var(--brand-icon-teal)]"
-                            aria-label="More actions"
-                          >
-                            <MoreHorizontal className="size-4" />
-                          </Button>
+                        <div className="flex items-center justify-end">
+                          <CorporationRowActionsMenu rowName={row.name} />
                         </div>
                       </td>
                     </tr>

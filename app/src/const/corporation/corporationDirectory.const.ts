@@ -19,6 +19,11 @@ export const CORPORATION_DIRECTORY_COPY = {
     previous: 'Previous',
     next: 'Next',
   },
+  rowActionsMenu: {
+    edit: 'Edit',
+    suspend: 'Suspend',
+    openMenu: 'Open row actions',
+  },
 } as const
 
 export type CorporationRow = {
