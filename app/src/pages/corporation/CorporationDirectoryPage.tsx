@@ -1,6 +1,7 @@
 import logoMark from '@/assets/Logo Wrapper.svg'
 import addIcon from '@/assets/Left icon wrapper.svg'
 import { CorporationRowActionsMenu } from '@/components/corporation/CorporationRowActionsMenu'
+import { TimeRangeSelectMenu } from '@/components/corporation/TimeRangeSelectMenu'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import {
@@ -229,24 +230,7 @@ export function CorporationDirectoryPage() {
                   aria-hidden
                 />
               </label>
-              <label className="relative">
-                <span className="sr-only">{copy.timePeriod}</span>
-                <select
-                  className={cn(
-                    'h-10 min-w-[160px] appearance-none rounded-md border border-border bg-card py-2 pr-9 pl-3 text-sm text-foreground shadow-sm',
-                    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
-                  )}
-                  defaultValue="year"
-                >
-                  <option value="year">Last 12 months</option>
-                  <option value="quarter">Last quarter</option>
-                  <option value="month">Last month</option>
-                </select>
-                <ChevronDown
-                  className="pointer-events-none absolute right-2.5 top-1/2 size-4 -translate-y-1/2 text-[color:var(--brand-icon-teal)]"
-                  aria-hidden
-                />
-              </label>
+              <TimeRangeSelectMenu />
             </div>
           </div>
 

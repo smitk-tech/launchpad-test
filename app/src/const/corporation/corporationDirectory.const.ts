@@ -24,7 +24,23 @@ export const CORPORATION_DIRECTORY_COPY = {
     suspend: 'Suspend',
     openMenu: 'Open row actions',
   },
+  timeRangeMenu: {
+    openMenu: 'Time period',
+  },
 } as const
+
+export const TIME_RANGE_OPTIONS = [
+  { id: 'allTime', label: 'All Time' },
+  { id: 'last24Hours', label: 'Last 24 hours' },
+  { id: 'last7Days', label: 'Last 7 days' },
+  { id: 'last30Days', label: 'Last 30 days' },
+  { id: 'last3Months', label: 'Last 3 months' },
+  { id: 'last6Months', label: 'Last 6 months' },
+  { id: 'lastYear', label: 'Last Year' },
+  { id: 'customRange', label: 'Custom Range' },
+] as const
+
+export type TimeRangeOptionId = (typeof TIME_RANGE_OPTIONS)[number]['id']
 
 export type CorporationRow = {
   id: string
