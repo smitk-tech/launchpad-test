@@ -1,18 +1,25 @@
 import editIcon from '@/assets/I18-13571_2061-18533_65-5200.svg'
 import suspendIcon from '@/assets/I18-13571_2061-18534_19-3055.svg'
+import editIconSuspended from '@/assets/I18-13572_2061-18533_65-5200.svg'
+import reinstateIcon from '@/assets/I18-13572_2061-18584_19-3055.svg'
 import { Button } from '@/components/ui/button'
-import { CORPORATION_DIRECTORY_COPY } from '@/const/corporation/corporationDirectory.const'
+import {
+  CORPORATION_DIRECTORY_COPY,
+  type CorporationRow,
+} from '@/const/corporation/corporationDirectory.const'
 import { cn } from '@/lib/utils'
 import { MoreHorizontal } from 'lucide-react'
 import { useEffect, useId, useRef, useState } from 'react'
 
 type CorporationRowActionsMenuProps = {
   rowName: string
+  status: CorporationRow['status']
   className?: string
 }
 
 export function CorporationRowActionsMenu({
   rowName,
+  status,
   className,
 }: CorporationRowActionsMenuProps) {
   const copy = CORPORATION_DIRECTORY_COPY.rowActionsMenu
@@ -44,9 +51,15 @@ export function CorporationRowActionsMenu({
     setOpen(false)
   }
 
-  const handleSuspend = () => {
+  const handleSecondary = () => {
     setOpen(false)
   }
+
+  const isSuspended = status === 'Suspended'
+  const secondaryIcon = isSuspended ? reinstateIcon : suspendIcon
+  const secondaryLabel = isSuspended ? copy.reinstate : copy.suspend
+  const secondaryWidthClass = isSuspended ? 'w-[63px]' : 'w-[59px]'
+  const editIconSrc = isSuspended ? editIconSuspended : editIcon
 
   return (
     <div ref={rootRef} className={cn('relative inline-flex', className)}>
@@ -79,7 +92,7 @@ export function CorporationRowActionsMenu({
                 onClick={handleEdit}
               >
                 <img
-                  src={editIcon}
+                  src={editIconSrc}
                   alt=""
                   width={20}
                   height={20}
@@ -92,18 +105,23 @@ export function CorporationRowActionsMenu({
               <button
                 type="button"
                 role="menuitem"
-                className="box-border flex h-8 w-[152px] shrink-0 flex-row items-center gap-2 rounded-md bg-transparent py-[5.5px] pr-2 pl-2 text-left text-sm leading-[21px] text-destructive outline-none hover:bg-muted/80 focus-visible:ring-2 focus-visible:ring-ring"
-                onClick={handleSuspend}
+                className="box-border flex h-8 w-[152px] shrink-0 flex-row items-center gap-2 rounded-md bg-transparent py-[5.5px] pr-2 pl-2 text-left text-sm leading-[21px] text-foreground outline-none hover:bg-muted/80 focus-visible:ring-2 focus-visible:ring-ring"
+                onClick={handleSecondary}
               >
                 <img
-                  src={suspendIcon}
+                  src={secondaryIcon}
                   alt=""
                   width={20}
                   height={20}
                   className="size-5 shrink-0"
                 />
-                <span className="h-[21px] w-[59px] shrink-0 leading-[21px]">
-                  {copy.suspend}
+                <span
+                  className={cn(
+                    'h-[21px] shrink-0 leading-[21px]',
+                    secondaryWidthClass,
+                  )}
+                >
+                  {secondaryLabel}
                 </span>
               </button>
             </div>

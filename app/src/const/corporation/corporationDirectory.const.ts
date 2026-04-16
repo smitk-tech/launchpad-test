@@ -22,6 +22,7 @@ export const CORPORATION_DIRECTORY_COPY = {
   rowActionsMenu: {
     edit: 'Edit',
     suspend: 'Suspend',
+    reinstate: 'Reinstate',
     openMenu: 'Open row actions',
   },
   timeRangeMenu: {

@@ -311,7 +311,10 @@ export function CorporationDirectoryPage() {
                       </td>
                       <td className="px-4 py-3">
                         <div className="flex items-center justify-end">
-                          <CorporationRowActionsMenu rowName={row.name} />
+                          <CorporationRowActionsMenu
+                            rowName={row.name}
+                            status={row.status}
+                          />
                         </div>
                       </td>
                     </tr>
