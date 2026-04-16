@@ -1,0 +1,16 @@
+export const LOGIN_COPY = {
+  title: "Welcome back!",
+  subtitle: "Enter your email and password to sign in.",
+  emailLabel: "Email",
+  emailPlaceholder: "Enter email",
+  passwordLabel: "Password",
+  passwordPlaceholder: "Enter password",
+  rememberMe: "Remember me",
+  forgotPassword: "Forgot Password?",
+  login: "Login",
+  needHelp: "Need help?",
+  contactUs: "Contact Us",
+  contactMailto: "mailto:support@bspblueprint.com",
+  version: "Version 1.0",
+  privacyAndTerms: "Privacy Policy  |  Terms of Use",
+} as const;

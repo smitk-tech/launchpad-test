@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 248 33% 97%;
+    --foreground: 200 18% 24%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 200 18% 24%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 200 18% 24%;
+
+    --primary: 214 54% 41%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 252 25% 89%;
+    --secondary-foreground: 200 18% 24%;
+
+    --muted: 248 33% 97%;
+    --muted-foreground: 198 20% 30%;
+
+    --accent: 252 25% 89%;
+    --accent-foreground: 200 18% 24%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 252 25% 89%;
+    --input: 252 25% 89%;
+    --ring: 214 54% 41%;
+
+    --radius: 0.75rem;
+
+    --brand-navy: 200 18% 24%;
+    --brand-slate: 198 20% 30%;
+    --brand-teal: 193 30% 42%;
+    --brand-link: 220 65% 54%;
+    --brand-login-bg: 248 33% 97%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
+  }
+}
