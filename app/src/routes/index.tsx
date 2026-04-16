@@ -3,6 +3,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import { ROUTES } from "@/const/common/routes.const";
 import { HomePage } from "@/pages/home/HomePage";
 import { LoginPage } from "@/pages/auth/LoginPage";
+import { RegisterPage } from "@/pages/auth/RegisterPage";
 import { useAuthStore } from "@/store/auth.store";
 
 function ProtectedRoute({ children }: { children: ReactNode }) {
@@ -17,6 +18,7 @@ export function AppRoutes() {
   return (
     <Routes>
       <Route path={ROUTES.login} element={<LoginPage />} />
+      <Route path={ROUTES.register} element={<RegisterPage />} />
       <Route
         path={ROUTES.root}
         element={
